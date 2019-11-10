@@ -1,0 +1,334 @@
+.feedback__form {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  padding-bottom: 50px;
+}
+
+.feedback__intro {
+  position: relative;
+  padding: 40px 20px 40px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $grey300;
+  }
+}
+
+.feedback__text {
+  margin: 0;
+}
+
+.feedback__section {
+  position: relative;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0 20px 50px;
+
+  box-sizing: border-box;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: $grey300;
+  }
+  &.feedback__section--comment:after {
+    display: none;
+  }
+}
+
+.feedback__subtitle {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 25px;
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase
+}
+
+.feedback__subtitle br {
+    display: none;
+}
+
+.feedback__intro {
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: $grey700;
+  text-align: center;
+}
+
+.feedback__field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.feedback__field--contacts {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.feedback__field label {
+  box-sizing: border-box;
+  display: block;
+  width: 30%;
+  padding-right: 10px;
+
+  font-size: 14px;
+  line-height: 26px;
+  color: $grey700;
+  text-transform: uppercase;
+}
+
+.feedback__field input {
+  box-sizing: border-box;
+  padding: 20px;
+  width: 70%;
+  height: 58px;
+
+  font: inherit;
+
+  background-color: $grey100;
+  border: none;
+
+  &:hover {
+    background-color: $grey300;
+  }
+
+  &:active {
+    background-color: $white;
+    outline: 4px solid $grey300;
+  }
+}
+
+.feedback__field input::placeholder {
+  color: $black;
+  font-weight: bold;
+}
+
+.feedback__field--contacts label {
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.feedback__field--contacts input {
+  width: 100%;
+  font: inherit;
+}
+
+.feedback__field--contacts p {
+  width: 100%;
+  margin: 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 58px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $grey400;
+  }
+}
+
+.feedback__icon {
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 20px;
+  width: 18px;
+  height: 18px;
+
+  fill: $black;
+  z-index: 1;
+}
+
+.feedback__comment {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 160px;
+  padding: 20px 35px;
+  border: 0;
+  background-color: $grey100;
+
+  font: inherit;
+  font-weight: bold;
+}
+
+.feedback__comment::placeholder {
+  color: $black;
+}
+
+.feedback__btn-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  width: 100%;
+}
+
+.feedback__btn {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 15px;
+
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.feedback__caution {
+  display: none;
+
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $grey700;
+}
+
+/* Стили для разных экранов */
+
+@media (max-width: $mobile-width-only) {
+
+}
+
+@media (min-width: $mobile-width) {
+
+}
+
+@media (min-width: $tablet-width) {
+  .feedback__section.feedback__section--name,
+  .feedback__section.feedback__section--impression {
+    width: 50%;
+    padding-bottom: 0;
+    margin-bottom: 60px;
+  }
+
+  .feedback__section--impression {
+    order: -1;
+    border-right: 1px solid $grey300;
+  }
+
+  .feedback__intro {
+    padding: 70px 60px 80px;
+    border-bottom: none;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .feedback__section {
+    padding: 40px 60px 50px;
+
+     &:after {
+      display: none;
+     }
+  }
+
+  .feedback__section--name .feedback__subtitle,
+  .feedback__section--impression .feedback__subtitle {
+    text-align: left;
+  }
+
+  .feedback__subtitle {
+    position: relative;
+
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      top: 12px;
+      height: 1px;
+
+      background-color: $grey300;
+    }
+
+    &:after {
+      left: 0;
+      right: 80%;
+    }
+
+    &:before {
+      right: 0;
+      left: 80%;
+    }
+  }
+
+  .feedback__section--name .feedback__subtitle,
+  .feedback__section--impression .feedback__subtitle,
+  .feedback__intro .feedback__subtitle {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+
+  .feedback__subtitle br {
+    display: block;
+  }
+
+  .feedback__btn-wrapper {
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  .feedback__btn {
+    width: 50%;
+  }
+
+  .feedback__caution {
+    display: block;
+    margin: 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .feedback__section {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .feedback__btn-wrapper {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+
+  .feedback__inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    & .feedback__field--contacts {
+      width: 45%;
+    }
+  }
+
+
+
+}

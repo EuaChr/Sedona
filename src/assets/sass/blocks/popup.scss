@@ -1,0 +1,119 @@
+.popup {
+  box-sizing: border-box;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 320px;
+  padding-bottom: 20px;
+
+  background-color: $grey100;
+  box-shadow: 0 7px 15px 0 rgba(0, 1, 1, 0.15);
+
+  z-index: 1000;
+}
+
+.popup--error {
+  background-color: $white;
+  display: none;
+  
+}
+
+.popup--success {
+  display: none;
+}
+
+.popup__title {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 45px 10px 30px;
+  
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+
+  background-color: $white;
+}
+
+.popup__text {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0 40px 30px;
+
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  color: $grey700;
+
+  background-color: $white;
+}
+
+.popup__btn {
+  padding: 18px 20px 15px;
+  width: 280px;
+
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.popup__btn--error {
+  width: 180px;
+}
+
+
+/* Стили для разных экранов */
+
+@media (min-width: $tablet-width) {
+  .popup {
+    width: 650px;
+    padding-bottom: 40px;
+  }
+
+  .popup__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .popup__text {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 40px;
+  }
+
+  .popup__btn {
+    width: 460px;
+  }
+
+  .popup--error {
+    width: 400px;
+
+    & .popup__btn {
+      width: 275px;
+    }
+
+    & .popup__text {
+      padding-left: 55px;
+      padding-right: 55px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+ 
+}
+

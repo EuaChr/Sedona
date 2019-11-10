@@ -1,0 +1,25 @@
+.btn {
+  border: none;
+  background-color: $lightblue;
+
+  font: inherit;
+  font-weight: bold;
+  color: $white;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $blue;
+  }
+
+  &:active {
+    background-color: $darkblue;
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:disabled {
+    background-color: $grey300;
+    cursor: auto;
+  }
+}

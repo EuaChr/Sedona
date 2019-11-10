@@ -1,0 +1,79 @@
+.intro {
+  position: relative;
+  min-height: 200px;
+  padding-top: 40px;
+  padding-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.intro__title {
+  margin: 0 auto;
+  margin-bottom: 30px;
+  max-width: 280px;
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.intro__desc {
+  margin: 0 auto;
+  max-width: 255px;
+
+  font-size: 14px;
+  line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.intro__img {
+  margin: 0;
+  width: 100%;
+
+  position: absolute;
+  bottom: -37px;
+}
+
+
+/* Стили для разных экранов */
+
+@media (min-width: $mobile-width) {
+
+  .intro__title br {
+    display: none;
+  }
+
+  .intro__title {
+    max-width: 350px;
+  }
+
+  .intro__desc {
+    max-width: 350px;
+  }
+
+  .intro__img {
+    display: none;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .intro {
+    min-height: 205px;
+  }
+ 
+  .intro__title {
+    max-width: 450px;
+  }
+
+  .intro__desc {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .intro {
+    min-height: 210px;
+  }
+}

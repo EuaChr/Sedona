@@ -1,0 +1,158 @@
+.checklist {
+  display: flex;
+  flex-direction: column;
+}
+
+.checklist p {
+  position: relative;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.checklist__input {
+  position:fixed;
+  opacity:0;
+}
+
+.checklist__label {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  height: 58px;
+  padding-top: 19px;
+  padding-left: 80px;
+
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+
+  &:after,
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+  }
+
+  &:after {
+    width: 58px;
+    height: 58px;
+
+    background-color: $grey100;
+  }
+
+  &:before {
+    top: 18px;
+    left: 18px;
+    width: 22px;
+    height: 22px;
+
+    background-color: transparent;
+
+    z-index: 1;
+  }
+}
+
+.checklist__label--checkbox {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+  }
+
+   &:before {
+    display: none;
+   }
+}
+
+.checklist__icon {
+  display: none;
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(29px - 11.5px);
+  width: 23px;
+  height: 16px;
+
+  fill: $grey700;
+
+
+  z-index: 1;
+}
+
+.checklist__input:checked ~ .checklist__label:before {
+  background-color: $grey700;
+}
+
+.checklist__input:checked ~ .checklist__icon {
+  display: block;
+}
+
+.checklist__input:hover ~ .checklist__label:after, 
+.checklist__input:focus ~ .checklist__label:after {
+  background-color: $grey300;
+}
+
+.checklist__input:active ~ .checklist__label:after {
+  background-color: $grey500;
+}
+
+.checklist__input:active ~ .checklist__label:before {
+  background-color: $grey600;
+  z-index: 1;
+}
+
+.checklist__input:active ~ .checklist__icon {
+  fill: $grey600;
+}
+
+
+/* Стили для разных экранов */
+
+@media (max-width: $mobile-width-only) {
+  
+}
+
+@media (min-width: $mobile-width) {
+  
+}
+
+@media (min-width: $tablet-width) {
+  .checklist p {
+    margin-bottom: 20px;
+  }
+
+  .checklist__wrapper {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .checklist--places p {
+    width: 40%;
+
+    &:nth-child(2n+1) {
+      align-self: flex-end;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+   .checklist__wrapper {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .checklist--places p {
+    width: 25%;
+  }
+
+}
+

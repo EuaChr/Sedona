@@ -1,0 +1,175 @@
+.feature__wrapper {
+  padding-top: 80px;
+  padding-bottom: 40px;
+
+  background-color: $lightblue;
+}
+
+.feature__wrapper--short {
+  color: $grey700;
+  background-color: $grey200;
+
+}
+
+.feature__list {
+  @include list-reset;
+  margin: 0;
+  padding: 0;
+
+  color: $white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.feature__title {
+  margin: 0;
+  margin-bottom: 12px;
+
+  font-weight: bold;
+}
+
+.feature__number {
+  margin: 0;
+  margin-bottom: 17px;
+
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.feature__desc {
+  max-width: 270px;
+  margin: 0 auto;
+
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.feature__number span {
+  position: relative;
+
+  &:after,
+  &:before {
+    content: "";
+
+    position: absolute;
+    top: 8px;
+    width: 9px;
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+
+  &:after {
+    left: -15px;
+  }
+
+   &:before {
+    right: -15px;
+  }
+}
+
+.feature__item--short .feature__number span {
+  &:after,
+  &:before {
+    background-color: $grey700;
+  }
+}
+
+.feature__img {
+  width: 100%;
+
+  & img {
+    width: 100%;
+  }
+}
+
+
+
+/* Стили для разных экранов */
+
+@media (max-width: $mobile-width-only) {
+  .feature__title br {
+    display: none;
+  }
+}
+
+@media (max-width: $tablet-width-only) {
+  .feature__item.feature__item--short:not(:last-child) {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      right: 20px;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+@media (min-width: $mobile-width) {
+  .feature__wrapper {
+    padding-top: 40px;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .feature__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .feature__item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .feature__item:nth-child(2) .feature__wrapper {
+    order: 2;
+  }
+
+  .feature__item--short {
+    width: 33%;
+    flex-grow: 1;
+  }
+
+  .feature__wrapper {
+    width: 33%;
+    flex-shrink: 0;
+    height: 255px;
+    box-sizing: border-box;
+  }
+
+  .feature__wrapper--short {
+    width: 100%;
+    background-color: $grey200;
+  }
+
+  .feature__desc {
+    max-width: 170px;
+  }
+
+  .feature__img {
+    width: 67%;
+    flex-shrink: 0;
+    height: 255px;
+    overflow: hidden;
+  }
+
+  .feature__list {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+}
+
+@media (min-width: $desktop-width) {
+  .feature__desc {
+    max-width: 280px;
+  }
+}
